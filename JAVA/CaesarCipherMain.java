@@ -1,49 +1,49 @@
 
 public class CaesarCipherMain {
  public static void main(String[] args) {
-	 CaesarCipher cipher = new CaesarCipher(3);
-	 System.out.println("Encrpytion code = " + new String(cipher.encoder));
-	 System.out.println("Decryption code = " + new String(cipher.decoder));
-	 String message = "THIS IS a secrET MESsage";
-	 String coded = cipher.encrypt(message);
-	 System.out.println("Secret: "+coded);
-	 String answer = cipher.decrypt(coded);
-	 System.out.println("Message: " + answer);
+	 CaesarCipher cipher = new CaesarCipher(3); //1
+	 System.out.println("Encrpytion code = " + new String(cipher.encoder)); //2
+	 System.out.println("Decryption code = " + new String(cipher.decoder)); //2
+	 String message = "THIS IS a secrET MESsage"; //1
+	 String coded = cipher.encrypt(message); // 1 + 1
+	 System.out.println("Secret: "+coded); //1
+	 String answer = cipher.decrypt(coded); // 1 + 1
+	 System.out.println("Message: " + answer); //1
 	 
- }
+ }// 12 operations or O(1)
   static class CaesarCipher{
-	  private char[] encoder = new char[52];
-	  private char[] decoder = new char[52];
+	  private char[] encoder = new char[52]; //1
+	  private char[] decoder = new char[52]; //1
 	  
 	  public CaesarCipher(int rotation) {
-		  for (int k = 0; k < 26; k++) {
-			  encoder[k] = (char)('A'+(k+rotation)%26);
-			  decoder [k] = (char)('A'+(k-rotation+26) %26);
-		  }
-		  for(int j = 26; j < 52; j++) {
-			  encoder[j] = (char)('a'+(j+rotation)%26);
-			  decoder[j] = (char)('a'+(j-rotation+26)%26);
-		  }
-	  }
+		  for (int k = 0; k < 26; k++) { //26
+			  encoder[k] = (char)('A'+(k+rotation)%26); // 5
+			  decoder [k] = (char)('A'+(k-rotation+26) %26); //6
+		  } // 37
+		  for(int j = 26; j < 52; j++) { // 26
+			  encoder[j] = (char)('a'+(j+rotation)%26); //5
+			  decoder[j] = (char)('a'+(j-rotation+26)%26); //6
+		  }//37
+	  }// 74 operations or O(1)
 	  public String encrypt(String m) {
-		  return transform(m, encoder);
-	  }
+		  return transform(m, encoder); //1 + O(n)
+	  } // 5n + 2 operations or 6n + 2 operations or O(n)
 	  public String decrypt(String m) {
-		  return transform(m, decoder);
-	  }
+		  return transform(m, decoder); // 1 + O(n)
+	  }// 5n + 2 operations or 6n + 2 operations or O(n)
 	  private String transform(String o, char[] code) {
-		  char[] msg = o.toCharArray();
-		  for(int i=0; i<msg.length; i++) {
-			  if(Character.isUpperCase(msg[i])) {
-				  int j = msg[i] - 'A';
-				  msg[i] = code[j];
+		  char[] msg = o.toCharArray(); //1
+		  for(int i=0; i<msg.length; i++) { //n 
+			  if(Character.isUpperCase(msg[i])) { // 1
+				  int j = msg[i] - 'A'; //2
+				  msg[i] = code[j]; // 1
 			  }
-			  else if(Character.isLowerCase(msg[i])){
-				  int l = msg[i] - 'a';
-				  msg[i] = code[26+l];
+			  else if(Character.isLowerCase(msg[i])){ //1
+				  int l = msg[i] - 'a'; //2
+				  msg[i] = code[26+l]; //2
 			  }
 		  }
-		  return new String(msg);
-	  }
+		  return new String(msg); //1
+	  }//5n + 1 operations or 6n + 1 operations or O(n)
   }
 }

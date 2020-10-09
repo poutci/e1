@@ -1,12 +1,12 @@
 
 public class Matrix {
 	public static void main(String[] args) {
-		int row = 3;
-		int column = 3;
-		int[][] matrix1 = {{1,2,5}, {4,7,2}, {1,7,3}}; 
-		int[][] matrix2 = {{3,7,8}, {8,1,0}, {1,3,8}}; 
-		int[][] matrixAdd = new int[row][column];
-		int[][] matrixMulti = new int[row][column];
+		int row = 3; //1
+		int column = 3; //1
+		int[][] matrix1 = {{1,2,5}, {4,7,2}, {1,7,3}}; //1
+		int[][] matrix2 = {{3,7,8}, {8,1,0}, {1,3,8}}; //1
+		int[][] matrixAdd = new int[row][column]; //1
+		int[][] matrixMulti = new int[row][column]; //1
 		
 		//this adds the two matrices together 
 		for(int i = 0; i < row; i++) { //n*n+2
@@ -39,4 +39,4 @@ public class Matrix {
 		}
 	} //n^2 + 2
 
-} // 4n^2 + 7 operations O(n^2) in runtime
+} // 4n^2 + 15 operations O(n^2) in runtime
