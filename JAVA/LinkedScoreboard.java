@@ -4,7 +4,7 @@ public class LinkedScoreboard {
 		Scoreboard scores = new Scoreboard(); //1
 		System.out.println("Top Scores:"); //1
 		scores.addNode(1, "Jeff"); //5 or 6 operations or O(1)
-		scores.addNode(100,"Vy"); //5 or 6 operations or O(1)
+		scores.addNode(100,"Jake"); //5 or 6 operations or O(1)
 		scores.addNode(6, "Zach"); //5 or 6 operations or O(1)
 		scores.addNode(513,"Tyler"); //5 or 6 operations or O(1)
 		scores.addNode(591, "Triss"); //5 or 6 operations or O(1)

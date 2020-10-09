@@ -4,7 +4,7 @@ public class DoublyLinkedScoreboard {
 		Scoreboard scores = new Scoreboard();//1
 		System.out.println("Top Scores:"); //1 
 		scores.addNode(1, "Jeff");//4 operations or 7 operations or O(1)
-		scores.addNode(100,"Vy");//4 operations or 7 operations or O(1)
+		scores.addNode(100,"Jake");//4 operations or 7 operations or O(1)
 		scores.addNode(6, "Zach");//4 operations or 7 operations or O(1)
 		scores.addNode(513,"Tyler");//4 operations or 7 operations or O(1)
 		scores.addNode(591, "Triss");//4 operations or 7 operations or O(1)
