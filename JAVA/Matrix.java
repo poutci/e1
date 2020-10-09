@@ -40,3 +40,4 @@ public class Matrix {
 	} //n^2 + 2
 
 } // 4n^2 + 15 operations O(n^2) in runtime
+  // Theta(n^2)

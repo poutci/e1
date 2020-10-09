@@ -18,7 +18,9 @@ public class DoublyLinkedScoreboard {
 		scores.remove("Alex"); //2n + 7 or 2n +9 operations or O(n)
 		System.out.println("New Top Scores:"); //1
 		scores.print();//18 operations or O(1) 
-	} // O(n^3)
+	} // O(n^3) in runtime
+	 //Theta(n^3)
+	
 	//node in a double linked list
 	static class DoubleNode{
 		int score;//1
@@ -32,7 +34,9 @@ public class DoublyLinkedScoreboard {
 			next = null;//1
 			previous = null;//1
 		}
-	}// 8 Operations O(1)
+	}// 8 Operations O(1) in runtime 
+	 //Theta(1)
+	
 	//Initializes the scoreboard
 	static class Scoreboard{
 		public DoubleNode head; // 1
@@ -52,7 +56,8 @@ public class DoublyLinkedScoreboard {
 				temp.previous = tail;//1
 				tail = temp;//1
 			}
-		}//4 operations or 7 operations or O(1)
+		}//4 operations or 7 operations or O(1) in runtime 
+		 //Theta(1)
 		
 		//prints the different nodes
 		 public void print() {  
@@ -66,7 +71,8 @@ public class DoublyLinkedScoreboard {
 		         index++; //2
 		        }  
 		        System.out.println(); //1 
-		    }//19 operations or O(1)
+		    }//19 operations or O(1) in runtime 
+		     //Theta(1)
 		 
 		 //removes a node from the listed list
 		 public void remove(String n) {
@@ -87,7 +93,8 @@ public class DoublyLinkedScoreboard {
 				 temp.next = temp.next.next;//1
 			 }
 				 
-		 }//2n + 7 or 2n +9 operations or O(n)
+		 }//2n + 7 or 2n +9 operations or O(n) in runtime 
+		  //Theta(n)
 		 
 			//sorts the linked list in descending order
 			public void sort() {
@@ -117,7 +124,11 @@ public class DoublyLinkedScoreboard {
 						first = first.next; //1 
 					}
 				}
-			} // 6 operations or 9n^3 + 5 operations. O(n^3) or O(1)
+			} // 6 operations or 9n^3 + 5 operations. O(n^3) or O(1) in runtime
+			/* best case: Omega(1)
+			 * worst case: O(n^3)
+			 * Average case: Theta(n^3)
+			 */
 		
 	}
 }

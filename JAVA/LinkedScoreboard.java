@@ -20,7 +20,8 @@ public class LinkedScoreboard {
 		System.out.println("New Top Scores:"); //1
 		scores.print(); //19 operations or O(1) 
 		
-	} // O(n^3)
+	} // O(n^3) in runtime
+	  // Theta(n^3)
 	
 	//a node in a linked list
 	static class Node{
@@ -33,7 +34,8 @@ public class LinkedScoreboard {
 			this.name = name; //1
 			next = null; //1
 		}
-	}// 6 operations or O(1)
+	}// 6 operations or O(1)in runtime
+	 //theta(1)
 	//Initializes the scoreboard
 	static class Scoreboard{
 		public Node head = null; //1
@@ -52,7 +54,8 @@ public class LinkedScoreboard {
 				tail.next = temp; //1
 				tail = temp; //1
 			}
-		} //5 or 6 operations or O(1)
+		} //5 or 6 operations or O(1) in runtime 
+		 //Theta(1)
 		
 		//sorts the linked list in descending order
 		public void sort() {
@@ -82,7 +85,12 @@ public class LinkedScoreboard {
 					first = first.next; //1 
 				}
 			}
-		} // 6 operations or 9n^3 + 5 operations. O(n^3) or O(1)
+		} /* 6 operations or 9n^3 + 5 operations. O(n^3) or O(1) in runtime
+		/* best case: Omega(1)
+		 * worst case: O(n^3)
+		 * average case:Theta(N^3)
+		 */
+		
 		
 		// deletes a node from the linked list
 		public void remove(String name) {
@@ -103,7 +111,11 @@ public class LinkedScoreboard {
 			}
 			//unlinks the node
 			previous.next = temp.next; //1
-		}// either 2n+3 or 6 operation so O(n) or O(1)
+		}// either 2n+3 or 6 operation so O(n) or O(1) in runtime
+		/* best case: Omega(1)
+		 * worst case: O(n)
+		 * average case: Theta(n)
+		 */
 		
 		//prints the different nodes
 		 public void print() {  
@@ -117,7 +129,8 @@ public class LinkedScoreboard {
 		         index++; //2
 		        }  
 		        System.out.println(); //1 
-		    }//18 operations or O(1)  
+		    }//18 operations or O(1) in runtime 
+		     //Theta(1)
 	}
 }
 	

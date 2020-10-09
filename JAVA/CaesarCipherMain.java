@@ -10,7 +10,8 @@ public class CaesarCipherMain {
 	 String answer = cipher.decrypt(coded); // 1 + 1
 	 System.out.println("Message: " + answer); //1
 	 
- }// 12 operations or O(1)
+ }// 12 operations or O(1) in runtime
+  // Theta(1)
   static class CaesarCipher{
 	  //sets up the encoder and decoder arrays
 	  private char[] encoder = new char[52]; //1
@@ -27,15 +28,20 @@ public class CaesarCipherMain {
 			  encoder[j] = (char)('a'+(j+rotation)%26); //5
 			  decoder[j] = (char)('a'+(j-rotation+26)%26); //6
 		  }//37
-	  }// 74 operations or O(1)
+	  }// 74 operations or O(1) in runtime
+	   // Theta(1)
 	  //encrypts the string
 	  public String encrypt(String m) {
 		  return transform(m, encoder); //1 + O(n)
-	  } // 5n + 2 operations or 6n + 2 operations or O(n)
+	  } // 5n + 2 operations or 6n + 2 operations or O(n) in runtime
+	   // Theta(n)
+	  
 	  //decrypts the string
 	  public String decrypt(String m) {
 		  return transform(m, decoder); // 1 + O(n)
-	  }// 5n + 2 operations or 6n + 2 operations or O(n)
+	  }// 5n + 2 operations or 6n + 2 operations or O(n) in runtime
+	   // Theta(n)
+	  
 	  //used to either encrpty or decrypt with string with the given rotation
 	  private String transform(String o, char[] code) {
 		  char[] msg = o.toCharArray(); //1
@@ -52,6 +58,7 @@ public class CaesarCipherMain {
 			  }
 		  }
 		  return new String(msg); //1
-	  }//5n + 1 operations or 6n + 1 operations or O(n)
+	  }//5n + 1 operations or 6n + 1 operations or O(n) in runtime
+	   //Theta(n)
   }
 }
