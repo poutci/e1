@@ -5,13 +5,13 @@ public class CaesarCipherMain {
 	 System.out.println("Encrpytion code = " + new String(cipher.encoder)); //2
 	 System.out.println("Decryption code = " + new String(cipher.decoder)); //2
 	 String message = "THIS IS a secrET MESsage"; //1
-	 String coded = cipher.encrypt(message); // 1 + 1
+	 String coded = cipher.encrypt(message); // 1 + 6n + 2
 	 System.out.println("Secret: "+coded); //1
-	 String answer = cipher.decrypt(coded); // 1 + 1
+	 String answer = cipher.decrypt(coded); // 1 + 6n + 2
 	 System.out.println("Message: " + answer); //1
 	 
- }// 12 operations or O(1) in runtime
-  // Theta(1)
+ }// 12n+14 operations or O(n) in runtime
+  // Theta(n)
   static class CaesarCipher{
 	  //sets up the encoder and decoder arrays
 	  private char[] encoder = new char[52]; //1
